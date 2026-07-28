@@ -1,194 +1,77 @@
-🧠 Mental Health Intensity Prediction using NLP
-📌 Overview
-Mental health issues are becoming increasingly common, making early identification of emotional distress more important than ever. This project presents an NLP-based Mental Health Intensity Prediction System that analyzes text posts and classifies them into different mental health intensity levels using Deep Learning.
+# 🧠 Mental Health Classification Using GloVe Embeddings and GRU Networks
 
-The application uses a pre-trained GloVe (Global Vectors for Word Representation) embedding with a GRU (Gated Recurrent Unit) neural network to understand the contextual meaning of text and predict the intensity level. The trained model is deployed through a Flask web application, allowing users to perform both single-text and batch predictions.
+## 📌 Project Overview
 
-Disclaimer: This project is intended for educational and research purposes only. It is not a substitute for professional mental health diagnosis or treatment.
+This project is a Natural Language Processing (NLP) application that classifies mental health conditions from textual data using Deep Learning. The model leverages **GloVe word embeddings** for semantic text representation and a **Gated Recurrent Unit (GRU)** neural network to capture contextual information in user-written text. A user-friendly **Streamlit** web application allows users to enter text and receive real-time mental health predictions.
 
-🚀 Features
-Predict mental health intensity from user text
-Batch prediction using CSV file upload
-Text preprocessing pipeline
-Pre-trained GloVe word embeddings
-GRU-based deep learning model
-Interactive Flask web interface
-Download prediction results
-Responsive and user-friendly dashboard
-📂 Project Structure
-Mental-Health-Intensity/
-│
-├── app.py
-├── requirements.txt
-├── README.md
-├── models/
-│   ├── gru_model.keras
-│   ├── tokenizer.pkl
-│   └── label_encoder.pkl
-│
-├── utils/
-│   ├── predictor.py
-│   ├── preprocessing.py
-│   └── performance.py
-│
-├── templates/
-│   ├── index.html
-│   └── result.html
-│
-├── static/
-│   ├── css/
-│   ├── js/
-│   └── images/
-│
-├── uploads/
-├── outputs/
-└── notebook/
-    └── main.ipynb
-🛠️ Technologies Used
-Python
-Natural Language Processing (NLP)
-TensorFlow / Keras
-GloVe Word Embeddings
-GRU (Gated Recurrent Unit)
-Flask
-Pandas
-NumPy
-Scikit-learn
-HTML
-CSS
-JavaScript
-📊 Dataset
-The dataset contains mental health-related text posts with corresponding intensity labels.
+## 🚀 Features
 
-Example columns:
+* Text preprocessing and cleaning
+* Tokenization and sequence padding
+* Pre-trained GloVe word embeddings
+* GRU-based deep learning model using TensorFlow/Keras
+* Real-time prediction through a Streamlit web interface
+* Simple and interactive user experience
 
-Column	Description
-posts	User-generated text
-intensity	Mental health intensity label
-The model predicts one of the following categories:
+## 🛠️ Technologies Used
 
-Normal
-Low
-Moderate
-High
-🔄 Data Preprocessing
-The preprocessing pipeline includes:
+* Python
+* Natural Language Processing (NLP)
+* TensorFlow & Keras
+* GloVe Word Embeddings
+* GRU (Gated Recurrent Unit)
+* Streamlit
+* NumPy
+* Pandas
+* Scikit-learn
+* Matplotlib
 
-Convert text to lowercase
-Remove URLs
-Remove HTML tags
-Remove punctuation
-Remove special characters
-Remove extra whitespace
-Tokenization
-Sequence padding
-🧠 Model Architecture
-The model uses:
+## 📂 Project Workflow
 
-Pre-trained GloVe Embedding Layer
-GRU Layer
-Dropout Layer
-Dense Layer
-Softmax Output Layer
-The embedding layer is initialized using pre-trained GloVe vectors to capture semantic relationships between words.
+1. Load and preprocess the mental health text dataset.
+2. Clean and tokenize the text.
+3. Convert words into GloVe embedding vectors.
+4. Train a GRU-based deep learning model.
+5. Save the trained model.
+6. Deploy the model using Streamlit for real-time predictions.
 
-📈 Evaluation Metrics
-Model performance is evaluated using:
+## 🎯 Objective
 
-Accuracy
-Precision
-Recall
-F1-Score
-Confusion Matrix
-Classification Report
-🌐 Flask Application
-The web application supports:
+The objective of this project is to demonstrate how Natural Language Processing and Deep Learning can be combined to automatically analyze textual data and classify mental health-related content. This system provides a practical example of AI-assisted text analysis through an easy-to-use web application.
 
-Single Prediction
-Users can enter a sentence and receive the predicted mental health intensity.
+## 📁 Project Structure
 
-Batch Prediction
-Users can upload a CSV file containing multiple text records.
+```text
+mental-health-nlp/
+│── app.py
+│── preprocessing.py
+│── train_glove_gru.py
+│── requirements.txt
+│── README.md
+│── data/
+│── glove/
+│── saved_model/
+```
 
-The application:
+## ▶️ Installation
 
-Reads the uploaded file
-Performs preprocessing
-Predicts intensity for each record
-Displays results
-Allows downloading predictions as CSV
-⚙️ Installation
-Clone the repository:
-
-git clone https://github.com/your-username/mental-health-intensity.git
-Move into the project directory:
-
-cd mental-health-intensity
-Create a virtual environment (optional):
-
+```bash
+git clone <repository-url>
+cd mental-health-nlp
 python -m venv venv
-Activate it:
-
-Windows
-
-venv\Scripts\activate
-Linux / Mac
-
-source venv/bin/activate
-Install dependencies:
-
+venv\Scripts\activate      # Windows
 pip install -r requirements.txt
-Run the Flask application:
+streamlit run app.py
+```
 
-python app.py
-Open your browser:
+## 📌 Future Improvements
 
-http://127.0.0.1:5000
-💻 Usage
-Launch the Flask application.
-Enter a text message or upload a CSV file.
-Click Predict.
-View the predicted mental health intensity.
-Download results for batch predictions.
-📷 Application Preview
-Add screenshots of your application here.
+* Support for multiple mental health categories
+* Transformer-based models such as BERT or RoBERTa
+* Improved preprocessing and hyperparameter tuning
+* Explainable AI (XAI) for prediction interpretation
+* Cloud deployment for public access
 
-Example:
+## 👩‍💻 Author
 
-screenshots/
-    home.png
-    prediction.png
-    batch_prediction.png
-🔮 Future Enhancements
-BERT-based model implementation
-Explainable AI (XAI)
-Real-time API deployment
-Multi-language support
-User authentication
-Dashboard analytics
-Cloud deployment
-Mobile application integration
-👩‍💻 Author
-Chanuvala Swetha
-
-B.Tech – Computer Science Engineering
-
-Interested in:
-
-Machine Learning
-Natural Language Processing
-Deep Learning
-AI Applications
-Data Science
-📄 License
-This project is licensed under the MIT License.
-
-⭐ Acknowledgements
-TensorFlow
-Keras
-Scikit-learn
-Flask
-GloVe Embeddings
-NumPy
-Pandas
-Open-source NLP community
+Developed as an NLP and Deep Learning project to demonstrate text classification, sequence modeling, and web deployment using modern AI technologies.
